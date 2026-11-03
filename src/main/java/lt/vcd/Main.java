@@ -4,41 +4,33 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        if (!scanner.hasNextInt()) return;
-        int n = scanner.nextInt();
-
-        int[][] matrix = new int[n][n];
-
-
+        Scanner sc = new Scanner(System.in);
+        if (!sc.hasNextInt()) return;
+        int n = sc.nextInt();
+        int[][] m = new int[n][n];
+        
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                matrix[i][j] = scanner.nextInt();
+                m[i][j] = sc.nextInt();
             }
         }
-
-
+        
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-
                 if (i == j || i + j == n - 1) {
-                    matrix[i][j] = 0;
+                    m[i][j] = 0;
                 }
             }
         }
-
-
+        
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                System.out.print(matrix[i][j]);
+                System.out.print(m[i][j]);
                 if (j < n - 1) {
                     System.out.print(" ");
                 }
             }
             System.out.println();
         }
-
-        scanner.close();
     }
 }
